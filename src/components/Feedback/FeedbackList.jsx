@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import FeedbackItem from './FeedbackItem';
 
 const FeedbackList = ({ feedback }) => {
-    if (!feedback || feedback.length == 0) {
+    if (!feedback || feedback.length === 0) {
         <p>No feedback yet</p>;
     }
 
