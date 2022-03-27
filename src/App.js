@@ -3,6 +3,7 @@ import seed from './data/seed';
 import Header from './components/Layout/Header';
 import FeedbackList from './components/Feedback/FeedbackList';
 import FeedbackStats from './components/Feedback/FeedbackStats';
+import FeedbackForm from './components/Feedback/FeedbackForm';
 
 function App() {
     const [feedback, setFeedback] = useState(seed);
@@ -18,8 +19,8 @@ function App() {
             <Header />
 
             <div className="container">
+                <FeedbackForm />
                 <FeedbackStats feedback={feedback} />
-
                 <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
             </div>
         </>

@@ -17,7 +17,7 @@ const FeedbackStats = ({ feedback }) => {
 };
 
 FeedbackStats.propTypes = {
-    feeback: PropTypes.array.isRequired,
+    feeback: PropTypes.array,
 };
 
 export default FeedbackStats;
