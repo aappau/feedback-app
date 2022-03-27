@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const FeedbackRatingSelect = ({ select }) => {
     const [selected, setSelected] = useState(10);
@@ -20,6 +21,10 @@ const FeedbackRatingSelect = ({ select }) => {
             ))}
         </ul>
     );
+};
+
+FeedbackRatingSelect.propTypes = {
+    select: PropTypes.func,
 };
 
 export default FeedbackRatingSelect;
