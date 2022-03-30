@@ -4,6 +4,7 @@ import seed from '../data/seed';
 import FeedbackList from '../components/Feedback/FeedbackList';
 import FeedbackStats from '../components/Feedback/FeedbackStats';
 import FeedbackForm from '../components/Feedback/FeedbackForm';
+import AboutIconLink from '../components/Layout/AboutIconLink';
 
 const Home = () => {
     const [feedback, setFeedback] = useState(seed);
@@ -24,6 +25,8 @@ const Home = () => {
             <FeedbackForm addFeedback={addFeedback} />
             <FeedbackStats feedback={feedback} />
             <FeedbackList feedback={feedback} deleteFeedback={deleteFeedback} />
+
+            <AboutIconLink />
         </>
     );
 };
