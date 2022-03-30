@@ -1,7 +1,10 @@
-import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import FeedbackItem from './FeedbackItem';
+import FeedbackContext from '../../context/FeedbackContext';
 
-const FeedbackList = ({ feedback, deleteFeedback }) => {
+const FeedbackList = () => {
+    const { feedback } = useContext(FeedbackContext);
+
     if (!feedback || feedback.length === 0) {
         <p>No feedback yet</p>;
     }
@@ -9,15 +12,10 @@ const FeedbackList = ({ feedback, deleteFeedback }) => {
     return (
         <div className="feedback-list">
             {feedback.map((item) => (
-                <FeedbackItem key={item.id} item={item} deleteFeedback={deleteFeedback} />
+                <FeedbackItem key={item.id} item={item} />
             ))}
         </div>
     );
-};
-
-FeedbackList.propTypes = {
-    feedback: PropTypes.array.isRequired,
-    deleteFeedback: PropTypes.func,
 };
 
 export default FeedbackList;

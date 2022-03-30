@@ -1,10 +1,12 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState, useContext } from 'react';
 import Button from '../Layout/Button';
 import Card from '../Layout/Card';
 import FeedbackRatingSelect from './FeedbackRatingSelect';
+import FeedbackContext from '../../context/FeedbackContext';
 
-const FeedbackForm = ({ addFeedback }) => {
+const FeedbackForm = () => {
+    const { addFeedback } = useContext(FeedbackContext);
+
     const [text, setText] = useState('');
     const [rating, setRating] = useState(10);
 
@@ -56,10 +58,6 @@ const FeedbackForm = ({ addFeedback }) => {
             </form>
         </Card>
     );
-};
-
-FeedbackForm.propTypes = {
-    addFeedback: PropTypes.func,
 };
 
 export default FeedbackForm;
